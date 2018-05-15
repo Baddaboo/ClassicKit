@@ -28,7 +28,7 @@ This is a little exploration into applying '90s-era design & principles into a m
 - Please let me know if you have any questions or comments! I'd also love to chat about design or tech nostalgia 🙂
 
 ## Disclaimer
-I do not claim ownership of the assets or logos used in this project. Internet Explorer is a registered trademark of Microsoft Inc.
+I do not claim ownership of the assets or logos used in this project. Windows and Internet Explorer are registered trademarks of Microsoft Inc.
 
 ## License
 MIT
