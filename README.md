@@ -1,7 +1,7 @@
 # ![ClassicKit](Images/logo.png)
 A collection of classic-style UI components for UIKit, influenced by Windows 95
 
-![about](Images/about.png) ![portrait](Images/portrait.png) ![landscape](Images/landscape.png)
+![about](Images/about.png)   ![portrait](Images/portrait.png)   ![landscape](Images/landscape.png)
 
 ## Introduction
 This is a little exploration into applying '90s-era design & principles into a modern platform with some primitive components. The assets and design metrics were (for the most part) taken from an actual installation of Windows 95. These are pixel-accurate renditions of the original design:
