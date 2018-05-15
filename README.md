@@ -9,6 +9,7 @@ This is a little exploration into applying '90s-era design & principles into a m
 ![](Images/pixel.png)
 
 ## Usage
+- The `Browser` example can be run out-of-the-box
 - You _should_ be able to include some or all of the files under `/Components` in your project.
 - Each component is intended to be used like their UIKit counterparts. For example, `CKButton` should respond to gesture events just as `UIButton` would.
 - These are `@IBDesignable` components! You can lay these components out in Interface Builder:
