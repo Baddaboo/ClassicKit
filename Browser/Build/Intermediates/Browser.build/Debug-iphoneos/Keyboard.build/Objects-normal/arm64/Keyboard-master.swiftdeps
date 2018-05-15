@@ -1,0 +1,5 @@
+version: "Apple Swift version 4.1 (swiftlang-902.0.48 clang-902.0.37.1)"
+options: "d666f16db361befa59e8c028552c3287"
+build_time: [1526339676, 91598000]
+inputs:
+  "/Users/blaketsuzaki/Development/ClassicKit/Browser/Keyboard/KeyboardViewController.swift": [1526339674, 0]

@@ -1,0 +1,22 @@
+version: "Apple Swift version 4.1 (swiftlang-902.0.48 clang-902.0.37.1)"
+options: "72d1ea332e50805bbf6761baa2c4a587"
+build_time: [1526341170, 974548000]
+inputs:
+  "/Users/blaketsuzaki/Development/ClassicKit/Components/CKContentWrapperView.swift": [1526166517, 0]
+  "/Users/blaketsuzaki/Development/ClassicKit/Browser/Browser/AppDelegate.swift": [1526152831, 0]
+  "/Users/blaketsuzaki/Development/ClassicKit/Components/CKVerticalScrollBar.swift": [1526281784, 0]
+  "/Users/blaketsuzaki/Development/ClassicKit/Components/CKProgressView.swift": [1526166778, 0]
+  "/Users/blaketsuzaki/Development/ClassicKit/Components/CKTextField.swift": [1526283871, 0]
+  "/Users/blaketsuzaki/Development/ClassicKit/Browser/Browser/ViewController.swift": [1526335569, 0]
+  "/Users/blaketsuzaki/Development/ClassicKit/Components/CKLabel.swift": [1526098735, 0]
+  "/Users/blaketsuzaki/Development/ClassicKit/Components/CKImageButton.swift": [1526086095, 0]
+  "/Users/blaketsuzaki/Development/ClassicKit/Components/CKNavigationBar.swift": [1526091545, 0]
+  "/Users/blaketsuzaki/Development/ClassicKit/Components/CKHorizontalScrollBar.swift": [1526281773, 0]
+  "/Users/blaketsuzaki/Development/ClassicKit/Components/CKDialogViewController.swift": [1526337988, 0]
+  "/Users/blaketsuzaki/Development/ClassicKit/Components/CKStatusView.swift": [1526098787, 0]
+  "/Users/blaketsuzaki/Development/ClassicKit/Components/CKButton.swift": [1526197457, 0]
+  "/Users/blaketsuzaki/Development/ClassicKit/Components/CKFillableView.swift": [1526293214, 0]
+  "/Users/blaketsuzaki/Development/ClassicKit/Components/CKTextButton.swift": [1526097832, 0]
+  "/Users/blaketsuzaki/Development/ClassicKit/Components/CKImageView.swift": [1526285971, 0]
+  "/Users/blaketsuzaki/Development/ClassicKit/Components/CKView.swift": [1526092639, 0]
+  "/Users/blaketsuzaki/Development/ClassicKit/Components/CKDefaults.swift": [1526273392, 0]

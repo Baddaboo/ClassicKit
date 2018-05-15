@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="tahoma-8px.ttf">
+            <string>fs-Tahoma-8px</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Browser" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="CKFillableView" customModule="Browser" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SXW-Ng-aAe" customClass="CKImageButton" customModule="Browser" customModuleProvider="target">
+                                <rect key="frame" x="8" y="30" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="dOH-Az-wos"/>
+                                    <constraint firstAttribute="width" secondItem="SXW-Ng-aAe" secondAttribute="height" multiplier="1:1" id="yaX-BT-EEW"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" red="0.75294117650000003" green="0.75294117650000003" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="back arrow"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="imageInset">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhZ-fd-Op4" customClass="CKImageButton" customModule="Browser" customModuleProvider="target">
+                                <rect key="frame" x="43" y="30" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lhZ-fd-Op4" secondAttribute="height" multiplier="1:1" id="bLp-44-JHM"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" red="0.75294117650000003" green="0.75294117650000003" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="forward arrow"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="imageInset">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="umj-OO-qqj" customClass="CKStatusView" customModule="Browser" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="454" width="170" height="25"/>
+                                <color key="backgroundColor" name="magnesium"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="Za9-Fv-TIy"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5PN-Fi-4Kc" customClass="CKTextField" customModule="Browser" customModuleProvider="target">
+                                <rect key="frame" x="8" y="73" width="168" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Ru2-xm-QEO"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textSize">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="Address"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ft7-Sb-8f9" customClass="CKContentWrapperView" customModule="Browser" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="105" width="320" height="349"/>
+                                <color key="backgroundColor" name="magnesium"/>
+                            </view>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GNP-IE-4F0">
+                                <rect key="frame" x="2" y="107" width="296" height="325"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FLQ-uF-4fM" customClass="CKVerticalScrollBar" customModule="Browser" customModuleProvider="target">
+                                <rect key="frame" x="298" y="107" width="20" height="325"/>
+                                <color key="backgroundColor" name="silver"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="XEo-Um-mDU"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" name="magnesium"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eC1-63-cAi" customClass="CKHorizontalScrollBar" customModule="Browser" customModuleProvider="target">
+                                <rect key="frame" x="2" y="432" width="296" height="20"/>
+                                <color key="backgroundColor" name="silver"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="3BH-Qc-fFU"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" name="magnesium"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WXG-tN-Smm" customClass="CKImageButton" customModule="Browser" customModuleProvider="target">
+                                <rect key="frame" x="86" y="30" width="35" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="WXG-tN-Smm" secondAttribute="height" multiplier="1:1" id="AKa-mj-1Pe"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" name="magnesium"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="stop"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="imageInset">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CMA-tW-ZrX" customClass="CKImageButton" customModule="Browser" customModuleProvider="target">
+                                <rect key="frame" x="121" y="30" width="35" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="CMA-tW-ZrX" secondAttribute="height" multiplier="1:1" id="W8Z-B7-ZeW"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" name="magnesium"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="refresh"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="imageInset">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zuu-Ae-ryU" customClass="CKProgressView" customModule="Browser" customModuleProvider="target">
+                                <rect key="frame" x="170" y="454" width="150" height="25"/>
+                                <color key="backgroundColor" name="magnesium"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="1sW-5X-V2Y"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="progressColor">
+                                        <color key="value" red="0.14901960780000001" green="0.14901960780000001" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cya-pm-Fb2" customClass="CKImageView" customModule="Browser" customModuleProvider="target">
+                                <rect key="frame" x="244" y="30" width="73" height="73"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Cya-pm-Fb2" secondAttribute="height" multiplier="1:1" id="KON-hs-80u"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kkq-R6-aOP" customClass="CKTextButton" customModule="Browser" customModuleProvider="target">
+                                <rect key="frame" x="180" y="73" width="60" height="30"/>
+                                <color key="backgroundColor" name="magnesium"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="GTV-qK-8ri"/>
+                                    <constraint firstAttribute="height" constant="30" id="ZdR-pr-HP0"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Go"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textSize">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ivj-rD-40x" customClass="CKImageButton" customModule="Browser" customModuleProvider="target">
+                                <rect key="frame" x="164" y="30" width="35" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ivj-rD-40x" secondAttribute="height" multiplier="1:1" id="mki-iI-sNu"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" name="magnesium"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="homepage"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="imageInset">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LlW-WY-Kc6" customClass="CKImageButton" customModule="Browser" customModuleProvider="target">
+                                <rect key="frame" x="199" y="30" width="35" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="LlW-WY-Kc6" secondAttribute="height" multiplier="1:1" id="bKT-5M-Bfm"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" name="magnesium"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="help"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="imageInset">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" name="magnesium"/>
+                        <constraints>
+                            <constraint firstItem="lhZ-fd-Op4" firstAttribute="leading" secondItem="SXW-Ng-aAe" secondAttribute="trailing" id="0iN-zc-Bg6"/>
+                            <constraint firstItem="kkq-R6-aOP" firstAttribute="centerY" secondItem="5PN-Fi-4Kc" secondAttribute="centerY" id="164-uD-YSj"/>
+                            <constraint firstItem="FLQ-uF-4fM" firstAttribute="leading" secondItem="GNP-IE-4F0" secondAttribute="trailing" id="1M8-js-xtm"/>
+                            <constraint firstItem="5PN-Fi-4Kc" firstAttribute="top" secondItem="SXW-Ng-aAe" secondAttribute="bottom" constant="8" id="1W5-A8-A7b"/>
+                            <constraint firstItem="5PN-Fi-4Kc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="2Uy-rj-NNF"/>
+                            <constraint firstItem="eC1-63-cAi" firstAttribute="top" secondItem="FLQ-uF-4fM" secondAttribute="bottom" id="3S6-gd-BLw"/>
+                            <constraint firstItem="GNP-IE-4F0" firstAttribute="top" secondItem="Ft7-Sb-8f9" secondAttribute="top" constant="2" id="4Xj-PO-Pe4"/>
+                            <constraint firstItem="Cya-pm-Fb2" firstAttribute="top" secondItem="WXG-tN-Smm" secondAttribute="top" id="5By-cd-uAm"/>
+                            <constraint firstItem="Zuu-Ae-ryU" firstAttribute="height" secondItem="umj-OO-qqj" secondAttribute="height" id="7iU-l1-66R"/>
+                            <constraint firstItem="umj-OO-qqj" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-1" id="8Ld-se-wbA"/>
+                            <constraint firstItem="umj-OO-qqj" firstAttribute="top" secondItem="eC1-63-cAi" secondAttribute="bottom" constant="2" id="CKo-fr-eyL"/>
+                            <constraint firstItem="eC1-63-cAi" firstAttribute="top" secondItem="GNP-IE-4F0" secondAttribute="bottom" id="Cp4-Sf-HCa"/>
+                            <constraint firstItem="FLQ-uF-4fM" firstAttribute="leading" secondItem="eC1-63-cAi" secondAttribute="trailing" id="FUr-yT-Ti7"/>
+                            <constraint firstItem="Zuu-Ae-ryU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="FjA-5H-ciI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ft7-Sb-8f9" secondAttribute="trailing" id="JVp-AH-3PQ"/>
+                            <constraint firstItem="LlW-WY-Kc6" firstAttribute="leading" secondItem="ivj-rD-40x" secondAttribute="trailing" id="Lyh-Za-dJm"/>
+                            <constraint firstItem="ivj-rD-40x" firstAttribute="height" secondItem="lhZ-fd-Op4" secondAttribute="height" id="N0l-Mv-LuT"/>
+                            <constraint firstItem="FLQ-uF-4fM" firstAttribute="top" secondItem="Ft7-Sb-8f9" secondAttribute="top" constant="2" id="OWK-N9-Qdf"/>
+                            <constraint firstItem="lhZ-fd-Op4" firstAttribute="height" secondItem="SXW-Ng-aAe" secondAttribute="height" id="OYF-bx-Ejy"/>
+                            <constraint firstItem="GNP-IE-4F0" firstAttribute="leading" secondItem="Ft7-Sb-8f9" secondAttribute="leading" constant="2" id="Oke-es-M43"/>
+                            <constraint firstItem="ivj-rD-40x" firstAttribute="centerY" secondItem="lhZ-fd-Op4" secondAttribute="centerY" id="QWQ-sB-Njm"/>
+                            <constraint firstItem="WXG-tN-Smm" firstAttribute="centerY" secondItem="ivj-rD-40x" secondAttribute="centerY" id="RRZ-sJ-KfX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cya-pm-Fb2" secondAttribute="trailing" constant="3" id="RY9-sy-RTg"/>
+                            <constraint firstItem="Ft7-Sb-8f9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Src-vN-DhC"/>
+                            <constraint firstItem="Cya-pm-Fb2" firstAttribute="bottom" secondItem="kkq-R6-aOP" secondAttribute="bottom" id="WcM-Tn-9EI"/>
+                            <constraint firstItem="CMA-tW-ZrX" firstAttribute="leading" secondItem="WXG-tN-Smm" secondAttribute="trailing" id="ciC-W0-cQB"/>
+                            <constraint firstItem="umj-OO-qqj" firstAttribute="top" secondItem="Ft7-Sb-8f9" secondAttribute="bottom" id="dEp-8k-Bq7"/>
+                            <constraint firstItem="Zuu-Ae-ryU" firstAttribute="top" secondItem="umj-OO-qqj" secondAttribute="top" id="dW5-BZ-xdM"/>
+                            <constraint firstItem="eC1-63-cAi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="2" id="eeX-0m-H48"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FLQ-uF-4fM" secondAttribute="trailing" constant="2" id="fS3-y1-0d9"/>
+                            <constraint firstItem="GNP-IE-4F0" firstAttribute="top" secondItem="5PN-Fi-4Kc" secondAttribute="bottom" constant="4" id="fV5-Vy-S62"/>
+                            <constraint firstItem="umj-OO-qqj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fXb-4k-cd4"/>
+                            <constraint firstItem="LlW-WY-Kc6" firstAttribute="height" secondItem="ivj-rD-40x" secondAttribute="height" id="fsw-Dh-uUW"/>
+                            <constraint firstItem="ivj-rD-40x" firstAttribute="leading" secondItem="CMA-tW-ZrX" secondAttribute="trailing" constant="8" id="g9t-3k-Agc"/>
+                            <constraint firstItem="CMA-tW-ZrX" firstAttribute="centerY" secondItem="WXG-tN-Smm" secondAttribute="centerY" id="j9T-3k-WWd"/>
+                            <constraint firstItem="WXG-tN-Smm" firstAttribute="height" secondItem="ivj-rD-40x" secondAttribute="height" id="mlz-mn-K9I"/>
+                            <constraint firstItem="SXW-Ng-aAe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="ond-Cm-CLd"/>
+                            <constraint firstItem="Zuu-Ae-ryU" firstAttribute="leading" secondItem="umj-OO-qqj" secondAttribute="trailing" id="pnx-xj-I0b"/>
+                            <constraint firstItem="SXW-Ng-aAe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="qVU-D2-Se3"/>
+                            <constraint firstItem="WXG-tN-Smm" firstAttribute="leading" secondItem="lhZ-fd-Op4" secondAttribute="trailing" constant="8" id="tPL-jQ-PTB"/>
+                            <constraint firstItem="kkq-R6-aOP" firstAttribute="leading" secondItem="5PN-Fi-4Kc" secondAttribute="trailing" constant="4" id="u4c-fh-mf6"/>
+                            <constraint firstItem="CMA-tW-ZrX" firstAttribute="height" secondItem="WXG-tN-Smm" secondAttribute="height" id="uzm-88-AfJ"/>
+                            <constraint firstItem="Cya-pm-Fb2" firstAttribute="leading" secondItem="kkq-R6-aOP" secondAttribute="trailing" constant="4" id="vse-mQ-S8c"/>
+                            <constraint firstItem="LlW-WY-Kc6" firstAttribute="centerY" secondItem="ivj-rD-40x" secondAttribute="centerY" id="vxg-zX-Ydr"/>
+                            <constraint firstItem="lhZ-fd-Op4" firstAttribute="top" secondItem="SXW-Ng-aAe" secondAttribute="top" id="xrV-cz-Jhj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="addressBar" destination="5PN-Fi-4Kc" id="DAW-EJ-cRu"/>
+                        <outlet property="backButton" destination="SXW-Ng-aAe" id="7H0-qg-wAB"/>
+                        <outlet property="forwardButton" destination="lhZ-fd-Op4" id="rs6-qW-8pq"/>
+                        <outlet property="goButton" destination="kkq-R6-aOP" id="1oh-QA-MlG"/>
+                        <outlet property="helpButton" destination="LlW-WY-Kc6" id="vlO-br-gYj"/>
+                        <outlet property="homeButton" destination="ivj-rD-40x" id="0Cm-bD-ndL"/>
+                        <outlet property="horizontalScrollBar" destination="eC1-63-cAi" id="BFk-Ao-YRN"/>
+                        <outlet property="imageView" destination="Cya-pm-Fb2" id="ES3-Cw-C3i"/>
+                        <outlet property="progressView" destination="Zuu-Ae-ryU" id="MtD-Jr-mou"/>
+                        <outlet property="refreshButton" destination="CMA-tW-ZrX" id="uI3-Y0-MO0"/>
+                        <outlet property="statusBar" destination="umj-OO-qqj" id="fGf-1c-wyG"/>
+                        <outlet property="stopButton" destination="WXG-tN-Smm" id="gbC-YF-3Du"/>
+                        <outlet property="verticalScrollBar" destination="FLQ-uF-4fM" id="A1U-CN-lDm"/>
+                        <outlet property="webView" destination="GNP-IE-4F0" id="F8h-ct-Y0n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="30" y="31.25"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8ce-H9-HiN">
+            <objects>
+                <viewController storyboardIdentifier="aboutView" id="JEn-0M-w2J" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ybT-FW-sMO">
+                        <rect key="frame" x="0.0" y="0.0" width="250" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="nLz-04-sEQ">
+                                <rect key="frame" x="100" y="20" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyj-sy-SMe">
+                                <rect key="frame" x="16" y="118" width="218" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">This  was  built  using  ClassicKit,  available  at  https://github.com/Baddaboo/ClassicKit .  Internet  Explorer  is  a  registered  trademark  of  Microsoft  Inc.</string>
+                                <fontDescription key="fontDescription" name="fs-Tahoma-8px" family="fs Tahoma 8px" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Browser.exe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKu-0i-Hil">
+                                <rect key="frame" x="45" y="82" width="161" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="fs-Tahoma-8px" family="fs Tahoma 8px" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Version  1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2K-Qd-1ef">
+                                <rect key="frame" x="45" y="99" width="161" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="fs-Tahoma-8px" family="fs Tahoma 8px" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6K4-u1-5zl"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="250" height="200"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TL7-T4-Qum" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="652.5" y="-80"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back arrow" width="32" height="32"/>
+        <image name="forward arrow" width="32" height="32"/>
+        <image name="help" width="16" height="16"/>
+        <image name="homepage" width="16" height="16"/>
+        <image name="refresh" width="16" height="16"/>
+        <image name="search" width="16" height="16"/>
+        <image name="stop" width="7" height="7"/>
+        <namedColor name="magnesium">
+            <color red="0.75300002099999996" green="0.75300002099999996" blue="0.75300002099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="silver">
+            <color red="0.875" green="0.875" blue="0.87800002098083496" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

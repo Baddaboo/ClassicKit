@@ -1,0 +1,85 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/blaketsuzaki/Development/ClassicKit/Browser/Build/Intermediates/IBDesignables/Products/Debug-iphonesimulator/Pods_Browser.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "Pods-Browser-umbrella.h",
+          'external-contents': "/Users/blaketsuzaki/Development/ClassicKit/Browser/Pods/Target Support Files/Pods-Browser/Pods-Browser-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "Pods_Browser-Swift.h",
+          'external-contents': "/Users/blaketsuzaki/Development/ClassicKit/Browser/Build/Intermediates/IBDesignables/Products/Debug-iphonesimulator/Pods_Browser.framework/Headers/Pods_Browser-Swift.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/blaketsuzaki/Development/ClassicKit/Browser/Build/Intermediates/IBDesignables/Products/Debug-iphonesimulator/Pods_Browser.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/blaketsuzaki/Development/ClassicKit/Browser/Build/Intermediates/IBDesignables/Intermediates.noindex/Pods.build/Debug-iphonesimulator/Pods-Browser.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/blaketsuzaki/Development/ClassicKit/Browser/Build/Intermediates/IBDesignables/Products/Debug-iphonesimulator/YYImage/YYImage.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "YYAnimatedImageView.h",
+          'external-contents': "/Users/blaketsuzaki/Development/ClassicKit/Browser/Pods/YYImage/YYImage/YYAnimatedImageView.h"
+        },
+        {
+          'type': 'file',
+          'name': "YYFrameImage.h",
+          'external-contents': "/Users/blaketsuzaki/Development/ClassicKit/Browser/Pods/YYImage/YYImage/YYFrameImage.h"
+        },
+        {
+          'type': 'file',
+          'name': "YYImage-Swift.h",
+          'external-contents': "/Users/blaketsuzaki/Development/ClassicKit/Browser/Build/Intermediates/IBDesignables/Products/Debug-iphonesimulator/YYImage/YYImage.framework/Headers/YYImage-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "YYImage-umbrella.h",
+          'external-contents': "/Users/blaketsuzaki/Development/ClassicKit/Browser/Pods/Target Support Files/YYImage/YYImage-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "YYImage.h",
+          'external-contents': "/Users/blaketsuzaki/Development/ClassicKit/Browser/Pods/YYImage/YYImage/YYImage.h"
+        },
+        {
+          'type': 'file',
+          'name': "YYImageCoder.h",
+          'external-contents': "/Users/blaketsuzaki/Development/ClassicKit/Browser/Pods/YYImage/YYImage/YYImageCoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "YYSpriteSheetImage.h",
+          'external-contents': "/Users/blaketsuzaki/Development/ClassicKit/Browser/Pods/YYImage/YYImage/YYSpriteSheetImage.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/blaketsuzaki/Development/ClassicKit/Browser/Build/Intermediates/IBDesignables/Products/Debug-iphonesimulator/YYImage/YYImage.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/blaketsuzaki/Development/ClassicKit/Browser/Build/Intermediates/IBDesignables/Intermediates.noindex/Pods.build/Debug-iphonesimulator/YYImage.build/module.modulemap"
+        }
+      ]
+    }
+  ]
+}
