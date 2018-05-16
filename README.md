@@ -16,7 +16,7 @@ This is a little exploration into applying '90s-era design & principles into a m
 ![xcode](Images/xcode.png)
 
 ## Notes & FAQ
-- This project is very much a work-in-progress and originated as a joke. Although it was designed with modularity and robustness in mind, there are no guarantees on reliability.
+- This project is very much a work-in-progress. Although it was designed with modularity and robustness in mind, there are no guarantees on reliability.
 - **Q: Why did you do this?**
   - This project was born out of some wholesome sarcasm and Millennial jokes with [Ben Galassi.](http://bengalassi.com) Check out his work!
 - **Q: If this project is made for Apple devices, why based it on Microsoft's design?**
