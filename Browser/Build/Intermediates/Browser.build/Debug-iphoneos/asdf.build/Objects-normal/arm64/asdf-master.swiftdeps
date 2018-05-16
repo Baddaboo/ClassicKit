@@ -1,5 +1,0 @@
-version: "Apple Swift version 4.1 (swiftlang-902.0.48 clang-902.0.37.1)"
-options: "22125d1cb4cc614b18c60bb4766f2aa1"
-build_time: [1526339593, 199511000]
-inputs:
-  "/Users/blaketsuzaki/Development/ClassicKit/Browser/asdf/TodayViewController.swift": [1526339592, 0]
