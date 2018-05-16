@@ -31,7 +31,7 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>tahoma-8px.ttf</string>
+		<string>MS Sans Serif.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

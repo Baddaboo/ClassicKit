@@ -19,6 +19,13 @@ class CKStatusView: CKContentWrapperView {
         }
     }
     
+    @IBInspectable
+    var textSize: CGFloat = 16 {
+        didSet {
+            label.font = UIFont(name: CKDefaults.fontName, size: textSize)
+        }
+    }
+    
     var label = CKLabel()
     
     override init(frame: CGRect) {
@@ -35,7 +42,7 @@ class CKStatusView: CKContentWrapperView {
     
     private func configure() {
         label.leftInset = 4
-        label.font = UIFont(name: CKDefaults.fontName, size: 20)
+        label.font = UIFont(name: CKDefaults.fontName, size: textSize)
         label.textColor = .black
         
         contentView = label

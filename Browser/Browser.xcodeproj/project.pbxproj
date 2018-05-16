@@ -16,6 +16,7 @@
 		12028F7B20A69C4100DA9CC1 /* CKStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12028F7A20A69C4100DA9CC1 /* CKStatusView.swift */; };
 		12028F7D20A6A14D00DA9CC1 /* CKLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12028F7C20A6A14D00DA9CC1 /* CKLabel.swift */; };
 		12028F8020A6A6FE00DA9CC1 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12028F7F20A6A6FE00DA9CC1 /* WebKit.framework */; };
+		122D898320ACD18300E66931 /* MS Sans Serif.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 122D898220ACD18300E66931 /* MS Sans Serif.ttf */; };
 		126F7C4B20A573A800CD1C0F /* CKView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126F7C4A20A573A800CD1C0F /* CKView.swift */; };
 		126F7C5520A573C500CD1C0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126F7C4D20A573C500CD1C0F /* ViewController.swift */; };
 		126F7C5620A573C500CD1C0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 126F7C4E20A573C500CD1C0F /* Assets.xcassets */; };
@@ -26,7 +27,6 @@
 		126F7C5E20A5746F00CD1C0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 126F7C5D20A5746F00CD1C0F /* Assets.xcassets */; };
 		126F7C6020A5895100CD1C0F /* CKContentWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126F7C5F20A5895100CD1C0F /* CKContentWrapperView.swift */; };
 		126F7C6220A63DBB00CD1C0F /* CKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126F7C6120A63DBB00CD1C0F /* CKButton.swift */; };
-		126F7C6520A6523A00CD1C0F /* tahoma-8px.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 126F7C6320A6512100CD1C0F /* tahoma-8px.ttf */; };
 		126F7C6720A6547800CD1C0F /* CKTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126F7C6620A6547800CD1C0F /* CKTextButton.swift */; };
 		126F7C6920A65A1B00CD1C0F /* CKImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126F7C6820A65A1B00CD1C0F /* CKImageButton.swift */; };
 		12A3B10B20A98FA90089A004 /* Explorer.gif in Resources */ = {isa = PBXBuildFile; fileRef = 12A3B10A20A98FA90089A004 /* Explorer.gif */; };
@@ -61,6 +61,7 @@
 		12028F7A20A69C4100DA9CC1 /* CKStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKStatusView.swift; sourceTree = "<group>"; };
 		12028F7C20A6A14D00DA9CC1 /* CKLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKLabel.swift; sourceTree = "<group>"; };
 		12028F7F20A6A6FE00DA9CC1 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		122D898220ACD18300E66931 /* MS Sans Serif.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MS Sans Serif.ttf"; sourceTree = "<group>"; };
 		12688B1A20AA4F8800A142D4 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		126F7C2320A5732C00CD1C0F /* Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Browser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		126F7C4A20A573A800CD1C0F /* CKView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKView.swift; sourceTree = "<group>"; };
@@ -74,7 +75,6 @@
 		126F7C5D20A5746F00CD1C0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		126F7C5F20A5895100CD1C0F /* CKContentWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKContentWrapperView.swift; sourceTree = "<group>"; };
 		126F7C6120A63DBB00CD1C0F /* CKButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKButton.swift; sourceTree = "<group>"; };
-		126F7C6320A6512100CD1C0F /* tahoma-8px.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tahoma-8px.ttf"; sourceTree = "<group>"; };
 		126F7C6620A6547800CD1C0F /* CKTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKTextButton.swift; sourceTree = "<group>"; };
 		126F7C6820A65A1B00CD1C0F /* CKImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKImageButton.swift; sourceTree = "<group>"; };
 		12A3B10A20A98FA90089A004 /* Explorer.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Explorer.gif; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 		126F7C6420A6512500CD1C0F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				126F7C6320A6512100CD1C0F /* tahoma-8px.ttf */,
+				122D898220ACD18300E66931 /* MS Sans Serif.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -251,13 +251,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				122D898320ACD18300E66931 /* MS Sans Serif.ttf in Resources */,
 				126F7C5820A573C500CD1C0F /* Main.storyboard in Resources */,
 				12A3B10B20A98FA90089A004 /* Explorer.gif in Resources */,
 				126F7C5620A573C500CD1C0F /* Assets.xcassets in Resources */,
 				126F7C5720A573C500CD1C0F /* LaunchScreen.storyboard in Resources */,
 				12F00B6F20A9721D00927D15 /* Windows Navigation Start.wav in Resources */,
 				126F7C5E20A5746F00CD1C0F /* Assets.xcassets in Resources */,
-				126F7C6520A6523A00CD1C0F /* tahoma-8px.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

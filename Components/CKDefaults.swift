@@ -14,7 +14,7 @@ class CKDefaults {
     static let desktopColor = UIColor(named: "teal")
     static let highlightColor = UIColor(named: "midnight")
     static let textureLightColor = UIColor(named: "silver")
-    static let fontName = "fs Tahoma 8px"
+    static let fontName = "MS Sans Serif"
 }
 
 extension UIColor {
