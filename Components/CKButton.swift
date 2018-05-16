@@ -15,8 +15,6 @@ class CKButton: UIControl {
         didSet { contentView.backgroundColor = buttonColor }
     }
     
-    @IBAction func meow() {}
-    
     var contentView: UIView = UIView() {
         didSet {
             oldValue.removeFromSuperview()
