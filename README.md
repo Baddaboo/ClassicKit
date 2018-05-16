@@ -18,7 +18,7 @@ This is a little exploration into applying '90s-era design & principles into a m
 ## Notes & FAQ
 - This project is very much a work-in-progress and originated as a joke. Although it was designed with modularity and robustness in mind, there are no guarantees on reliability.
 - **Q: Why did you do this?**
-  - This project was born out of some back-and-forth sarcasm with [Ben Galassi.](http://bengalassi.com) Check out his work!
+  - This project was born out of some wholesome sarcasm and Millennial jokes with [Ben Galassi.](http://bengalassi.com) Check out his work!
 - **Q: If this project is made for Apple devices, why based it on Microsoft's design?**
   - Most people were using Windows during this age and far more people recognize the Windows Standard design pattern than Platinum. If you need any proof, [PCs sold close to 100 million units in 1998, compared to just 2.7 million for Macintosh.](https://arstechnica.com/features/2005/12/total-share/8/)
   - I may revisit this point in the future.
