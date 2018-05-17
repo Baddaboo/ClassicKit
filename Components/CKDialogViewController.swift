@@ -44,14 +44,12 @@ class CKDialogViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if (animated) {
-            shadowView.frame.origin = CGPoint()
-            shadowView.frame.size = CGSize(width: view.frame.width, height: 0)
-            
-            UIView.animate(withDuration: 1, delay: 0, options: .curveLinear, animations: {
-                self.shadowView.frame = self.view.bounds
-            }, completion: nil)
-        }
+        shadowView.frame.origin = CGPoint()
+        shadowView.frame.size = CGSize(width: view.frame.width, height: 0)
+        
+        UIView.animate(withDuration: 1, delay: 0, options: .curveLinear, animations: {
+            self.shadowView.frame = self.view.bounds
+        }, completion: nil)
     }
     
     @objc func shadowViewWasTapped() {
