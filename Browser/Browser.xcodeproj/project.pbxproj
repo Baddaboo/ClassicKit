@@ -17,6 +17,7 @@
 		12028F7D20A6A14D00DA9CC1 /* CKLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12028F7C20A6A14D00DA9CC1 /* CKLabel.swift */; };
 		12028F8020A6A6FE00DA9CC1 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12028F7F20A6A6FE00DA9CC1 /* WebKit.framework */; };
 		122D898320ACD18300E66931 /* MS Sans Serif.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 122D898220ACD18300E66931 /* MS Sans Serif.ttf */; };
+		122D89E120AD758000E66931 /* CKBlueScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122D89E020AD758000E66931 /* CKBlueScreenViewController.swift */; };
 		126F7C4B20A573A800CD1C0F /* CKView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126F7C4A20A573A800CD1C0F /* CKView.swift */; };
 		126F7C5520A573C500CD1C0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126F7C4D20A573C500CD1C0F /* ViewController.swift */; };
 		126F7C5620A573C500CD1C0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 126F7C4E20A573C500CD1C0F /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 		12028F7C20A6A14D00DA9CC1 /* CKLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKLabel.swift; sourceTree = "<group>"; };
 		12028F7F20A6A6FE00DA9CC1 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		122D898220ACD18300E66931 /* MS Sans Serif.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MS Sans Serif.ttf"; sourceTree = "<group>"; };
+		122D89E020AD758000E66931 /* CKBlueScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKBlueScreenViewController.swift; sourceTree = "<group>"; };
 		12688B1A20AA4F8800A142D4 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		126F7C2320A5732C00CD1C0F /* Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Browser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		126F7C4A20A573A800CD1C0F /* CKView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKView.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				12A3B10E20AA2E680089A004 /* CKDialogViewController.swift */,
 				12028F7620A68D8500DA9CC1 /* CKFillableView.swift */,
 				12028F6E20A6693200DA9CC1 /* CKHorizontalScrollBar.swift */,
+				122D89E020AD758000E66931 /* CKBlueScreenViewController.swift */,
 				126F7C6820A65A1B00CD1C0F /* CKImageButton.swift */,
 				12F00B7220A9764500927D15 /* CKImageView.swift */,
 				12028F7C20A6A14D00DA9CC1 /* CKLabel.swift */,
@@ -330,6 +333,7 @@
 				12028F7B20A69C4100DA9CC1 /* CKStatusView.swift in Sources */,
 				126F7C6220A63DBB00CD1C0F /* CKButton.swift in Sources */,
 				12028F7720A68D8500DA9CC1 /* CKFillableView.swift in Sources */,
+				122D89E120AD758000E66931 /* CKBlueScreenViewController.swift in Sources */,
 				126F7C6720A6547800CD1C0F /* CKTextButton.swift in Sources */,
 				12F00B7320A9764500927D15 /* CKImageView.swift in Sources */,
 				126F7C4B20A573A800CD1C0F /* CKView.swift in Sources */,

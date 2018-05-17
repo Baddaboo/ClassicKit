@@ -1,2 +1,5 @@
 Build/
 *.DS_Store
+
+Spotify/
+SpotifyConfiguration.plist

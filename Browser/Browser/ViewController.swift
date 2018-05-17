@@ -140,6 +140,16 @@ class ViewController: UIViewController {
         }
     }
     
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        super.motionEnded(motion, with: event)
+        
+        if motion == .motionShake {
+            let viewController = CKBlueScreenViewController()
+            viewController.errorReason = "TOO_MUCH_SHAKING"
+            present(viewController, animated: false, completion: nil)
+        }
+    }
+    
     func playNavigationSound() {
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
