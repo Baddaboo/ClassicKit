@@ -8,6 +8,9 @@ This is a little exploration into applying '90s-era design & principles into a m
 
 ![](Images/pixel.png)
 
+**Update:**
+- (3/17) Added a simple Blue Screen of Death! Simply shake the device vigorously.
+
 ## Usage
 - The `Browser` example can be run out-of-the-box.
 - You _should_ be able to include some or all of the files under `/Components` in your project.
