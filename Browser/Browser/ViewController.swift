@@ -13,7 +13,7 @@ import WebKit
 import YYImage
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var backButton: CKImageButton!
     @IBOutlet weak var forwardButton: CKImageButton!
     @IBOutlet weak var homeButton: CKImageButton!
@@ -67,6 +67,9 @@ class ViewController: UIViewController {
         helpButton.addTarget(self, action: #selector(ViewController.helpButtonTapped), for: .touchUpInside)
         verticalScrollBar.addTarget(self, action: #selector(ViewController.verticalSliderDidMove), for: .valueChanged)
         horizontalScrollBar.addTarget(self, action: #selector(ViewController.horizontalSliderDidMove), for: .valueChanged)
+        
+        addressBar.textfield.returnKeyType = .go
+        addressBar.textfield.addTarget(self, action: #selector(ViewController.goButtonTapped), for: .primaryActionTriggered)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -99,7 +102,7 @@ class ViewController: UIViewController {
     
     @objc func goButtonTapped() {
         if let text = addressBar.text,
-           let url = URL(string: text) {
+            let url = URL(string: text) {
             let request = URLRequest(url: url)
             webView.load(request)
         }
