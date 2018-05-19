@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class CKProgressView: CKContentWrapperView {
+class CKProgressView: UIControl {
     @IBInspectable
     var value: CGFloat = 50 {
         didSet {
@@ -38,8 +38,15 @@ class CKProgressView: CKContentWrapperView {
         }
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setNeedsDisplay()
+    }
+    
     override func draw(_ rect: CGRect) {
         super.draw(rect)
+        
+        CKDefaults.drawInsetBevel(with: rect)
         
         if state == .disabled { return }
         
@@ -56,10 +63,5 @@ class CKProgressView: CKContentWrapperView {
             progressColor.set()
             barPath.fill()
         }
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        setNeedsDisplay()
     }
 }

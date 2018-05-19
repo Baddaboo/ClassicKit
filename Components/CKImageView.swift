@@ -10,7 +10,7 @@ import UIKit
 import YYImage
 
 @IBDesignable
-class CKImageView: CKContentWrapperView {
+class CKImageView: UIView {
     
     var image: UIImage? {
         get { return imageView.image }
@@ -47,9 +47,27 @@ class CKImageView: CKContentWrapperView {
         isOpaque = false
         
         imageView.contentMode = .scaleAspectFit
+        addSubview(imageView)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setNeedsDisplay()
+    }
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
         
-        contentView.removeFromSuperview()
-        contentView = imageView
-        addSubview(contentView)
+        CKDefaults.drawInsetBevel(with: rect)
+        
+        let lineWidth: CGFloat = CKDefaults.bevelWidth
+        
+        var contentFrame = CGRect()
+        contentFrame.origin.x = lineWidth * 2
+        contentFrame.origin.y = lineWidth * 2
+        contentFrame.size.height = rect.size.height - lineWidth * 4
+        contentFrame.size.width = rect.size.width - lineWidth * 4
+        
+        imageView.frame = contentFrame
     }
 }

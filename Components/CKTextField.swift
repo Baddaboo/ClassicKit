@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class CKTextField: CKContentWrapperView {
+class CKTextField: UIView {
     @IBInspectable
     var textSize: CGFloat = 30 {
         didSet { textfield.font = UIFont(name: CKDefaults.fontName, size: textSize) }
@@ -63,12 +63,31 @@ class CKTextField: CKContentWrapperView {
         textfield.font = UIFont(name: CKDefaults.fontName, size: 30)
         
         textfield.backgroundColor = .white
-        contentView.removeFromSuperview()
-        contentView = textfield
-        addSubview(contentView)
+        addSubview(textfield)
     }
     
     func hideKeyboard() {
         textfield.resignFirstResponder()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setNeedsDisplay()
+    }
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        
+        CKDefaults.drawInsetBevel(with: rect)
+
+        let lineWidth: CGFloat = CKDefaults.bevelWidth
+        
+        var contentFrame = CGRect()
+        contentFrame.origin.x = lineWidth * 2
+        contentFrame.origin.y = lineWidth * 2
+        contentFrame.size.height = rect.size.height - lineWidth * 4
+        contentFrame.size.width = rect.size.width - lineWidth * 4
+        
+        textfield.frame = contentFrame
     }
 }

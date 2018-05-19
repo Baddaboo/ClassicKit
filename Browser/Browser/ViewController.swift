@@ -22,29 +22,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var addressBar: CKTextField!
     @IBOutlet weak var goButton: CKTextButton!
     @IBOutlet weak var helpButton: CKImageButton!
-    @IBOutlet weak var verticalScrollBar: CKVerticalScrollBar!
-    @IBOutlet weak var horizontalScrollBar: CKHorizontalScrollBar!
     @IBOutlet weak var statusBar: CKStatusView!
     @IBOutlet weak var progressView: CKProgressView!
     @IBOutlet weak var imageView: CKImageView!
-    @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var wrapperView: CKContentWrapperView!
     
+    var webView: WKWebView = WKWebView()
     var player: AVPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         webView.navigationDelegate = self
-        webView.scrollView.showsVerticalScrollIndicator = false
-        webView.scrollView.showsHorizontalScrollIndicator = false
-        webView.scrollView.delegate = self
-        webView.scrollView.addObserver(self, forKeyPath: #keyPath(UIScrollView.contentSize), options: .new, context: nil)
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
+        wrapperView.contentView = webView
+        
         statusBar.message = "Ready"
-        verticalScrollBar.range = 1
-        verticalScrollBar.value = 1
-        horizontalScrollBar.range = 1
-        horizontalScrollBar.value = 1
+        
         progressView.range = 1
         progressView.isEnabled = false
         backButton.isEnabled = false
@@ -65,25 +59,11 @@ class ViewController: UIViewController {
         stopButton.addTarget(self, action: #selector(ViewController.stopButtonTapped), for: .touchUpInside)
         refreshButton.addTarget(self, action: #selector(ViewController.refreshButtonTapped), for: .touchUpInside)
         helpButton.addTarget(self, action: #selector(ViewController.helpButtonTapped), for: .touchUpInside)
-        verticalScrollBar.addTarget(self, action: #selector(ViewController.verticalSliderDidMove), for: .valueChanged)
-        horizontalScrollBar.addTarget(self, action: #selector(ViewController.horizontalSliderDidMove), for: .valueChanged)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         imageView.shouldAnimate = false
-    }
-    
-    @objc func verticalSliderDidMove() {
-        if verticalScrollBar.isScrolling {
-            webView.scrollView.contentOffset.y = verticalScrollBar.value
-        }
-    }
-    
-    @objc func horizontalSliderDidMove() {
-        if horizontalScrollBar.isScrolling {
-            webView.scrollView.contentOffset.x = horizontalScrollBar.value
-        }
     }
     
     @objc func refreshButtonTapped() {
@@ -124,18 +104,7 @@ class ViewController: UIViewController {
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if let object = object as? UIScrollView, object == webView.scrollView && keyPath == "contentSize" {
-            let contentHeight = webView.scrollView.contentSize.height
-            let frameHeight = webView.frame.height
-            verticalScrollBar.range = contentHeight - frameHeight
-            verticalScrollBar.thumbSize = (frameHeight / contentHeight) * verticalScrollBar.scrollSize
-            
-            let contentWidth = webView.scrollView.contentSize.width
-            let frameWidth = webView.frame.width
-            horizontalScrollBar.range = contentWidth - frameWidth
-            horizontalScrollBar.thumbSize = (frameWidth / contentWidth) * horizontalScrollBar.scrollSize
-        }
-        else if keyPath == "estimatedProgress" {
+        if keyPath == "estimatedProgress" {
             progressView.value = CGFloat(webView.estimatedProgress)
         }
     }
@@ -159,17 +128,6 @@ class ViewController: UIViewController {
                 player.play()
             }
         } catch { print(error.localizedDescription) }
-    }
-}
-
-extension ViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if !verticalScrollBar.isScrolling {
-            verticalScrollBar.value = scrollView.contentOffset.y
-        }
-        if !horizontalScrollBar.isScrolling {
-            horizontalScrollBar.value = scrollView.contentOffset.x
-        }
     }
 }
 

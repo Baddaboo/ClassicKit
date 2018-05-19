@@ -44,7 +44,7 @@ class CKHorizontalScrollBar: UIControl {
     @IBInspectable
     var thumbSize: CGFloat = 100 {
         didSet {
-            if thumbSize < frame.size.width { thumbSize = frame.size.width }
+            if thumbSize < frame.size.height { thumbSize = frame.size.height }
             else if thumbSize != oldValue { setNeedsLayout() }
         }
     }

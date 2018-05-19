@@ -9,8 +9,8 @@
 import UIKit
 
 
-
-class CKStatusView: CKContentWrapperView {
+@IBDesignable
+class CKStatusView: UIView {
 
     @IBInspectable
     var message: String = "" {
@@ -45,6 +45,27 @@ class CKStatusView: CKContentWrapperView {
         label.font = UIFont(name: CKDefaults.fontName, size: textSize)
         label.textColor = .black
         
-        contentView = label
+        addSubview(label)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setNeedsDisplay()
+    }
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        
+        CKDefaults.drawInsetBevel(with: rect)
+        
+        let lineWidth = CKDefaults.bevelWidth
+        
+        var contentFrame = CGRect()
+        contentFrame.origin.x = lineWidth * 2
+        contentFrame.origin.y = lineWidth * 2
+        contentFrame.size.height = rect.size.height - lineWidth * 4
+        contentFrame.size.width = rect.size.width - lineWidth * 4
+        
+        label.frame = contentFrame
     }
 }

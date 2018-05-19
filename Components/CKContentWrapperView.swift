@@ -7,14 +7,53 @@
 //
 
 import UIKit
+import WebKit
 
 @IBDesignable
-class CKContentWrapperView: UIControl {
-    var contentView: UIView = UIScrollView() {
+class CKContentWrapperView: UIView {
+    @IBInspectable
+    var scrollBarWidth: CGFloat = 20 {
+        didSet { setNeedsLayout() }
+    }
+    
+    @IBInspectable
+    var barColor: UIColor? = CKDefaults.backgroundColor {
+        didSet {
+            verticalScrollBar.buttonColor = barColor
+            horizontalScrollBar.buttonColor = barColor
+        }
+    }
+    
+    var verticalScrollBar = CKVerticalScrollBar()
+    var horizontalScrollBar = CKHorizontalScrollBar()
+    var contentView: UIView = UIView() {
         didSet {
             oldValue.removeFromSuperview()
             addSubview(contentView)
+            
+            contentView.clipsToBounds = true
+            
+            if let contentView = contentView as? UIScrollView { scrollView = contentView }
+            else if let contentView = contentView as? WKWebView { scrollView = contentView.scrollView }
+            else { scrollView = nil }
+            
             setNeedsDisplay()
+        }
+    }
+    
+    private var scrollView: UIScrollView? {
+        didSet {
+            if let scrollView = scrollView {
+                scrollView.showsVerticalScrollIndicator = false
+                scrollView.showsHorizontalScrollIndicator = false
+                scrollView.addObserver(self, forKeyPath: #keyPath(UIScrollView.contentSize), options: .new, context: nil)
+                scrollView.delegate = self
+            } else {
+                verticalScrollBar.range = 1
+                verticalScrollBar.value = 1
+                horizontalScrollBar.range = 1
+                horizontalScrollBar.value = 1
+            }
         }
     }
     
@@ -33,61 +72,104 @@ class CKContentWrapperView: UIControl {
     private func configure() {
         backgroundColor = .clear
         
-        if let contentView = contentView as? UIScrollView {
-            contentView.alwaysBounceVertical = true
-            contentView.clipsToBounds = true
-        }
+        verticalScrollBar.range = 1
+        verticalScrollBar.value = 1
+        horizontalScrollBar.range = 1
+        horizontalScrollBar.value = 1
+        
+        verticalScrollBar.buttonColor = barColor
+        horizontalScrollBar.buttonColor = barColor
+        
+        
         addSubview(contentView)
+        addSubview(verticalScrollBar)
+        addSubview(horizontalScrollBar)
+        
+        verticalScrollBar.addTarget(self, action: #selector(CKContentWrapperView.verticalSliderDidMove), for: .valueChanged)
+        horizontalScrollBar.addTarget(self, action: #selector(CKContentWrapperView.horizontalSliderDidMove), for: .valueChanged)
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if let object = object as? UIScrollView, object == scrollView && keyPath == "contentSize" {
+            let contentHeight = object.contentSize.height
+            let frameHeight = object.frame.height
+            verticalScrollBar.range = contentHeight - frameHeight
+            verticalScrollBar.thumbSize = (frameHeight / contentHeight) * verticalScrollBar.scrollSize
+            
+            let contentWidth = object.contentSize.width
+            let frameWidth = object.frame.width
+            horizontalScrollBar.range = contentWidth - frameWidth
+            horizontalScrollBar.thumbSize = (frameWidth / contentWidth) * horizontalScrollBar.scrollSize
+        }
+    }
+    
+    @objc func verticalSliderDidMove() {
+        if verticalScrollBar.isScrolling {
+            scrollView?.contentOffset.y = verticalScrollBar.value
+        }
+    }
+    
+    @objc func horizontalSliderDidMove() {
+        if horizontalScrollBar.isScrolling {
+            scrollView?.contentOffset.x = horizontalScrollBar.value
+        }
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        let lineWidth = CKDefaults.bevelWidth
+        
+        var contentFrame = CGRect()
+        contentFrame.origin.x = lineWidth * 2
+        contentFrame.origin.y = lineWidth * 2
+        contentFrame.size.height = frame.size.height - lineWidth * 4 - scrollBarWidth
+        contentFrame.size.width = frame.size.width - lineWidth * 4 - scrollBarWidth
+        
+        contentView.frame = contentFrame
+        
+        var verticalScrollFrame = CGRect()
+        verticalScrollFrame.origin.x = contentFrame.origin.x + contentFrame.size.width
+        verticalScrollFrame.origin.y = contentFrame.origin.y
+        verticalScrollFrame.size.height = contentFrame.size.height
+        verticalScrollFrame.size.width = scrollBarWidth
+        
+        verticalScrollBar.frame = verticalScrollFrame
+        
+        var horizontalScrollFrame = CGRect()
+        horizontalScrollFrame.origin.x = contentFrame.origin.x
+        horizontalScrollFrame.origin.y = contentFrame.origin.y + contentFrame.size.height
+        horizontalScrollFrame.size.height = scrollBarWidth
+        horizontalScrollFrame.size.width = contentFrame.size.width
+        
+        horizontalScrollBar.frame = horizontalScrollFrame
+        
         setNeedsDisplay()
     }
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
-        let outerBottom = UIBezierPath()
-        let innerBottom = UIBezierPath()
-        let innerTop = UIBezierPath()
-        let outerTop = UIBezierPath()
-        let lineWidth: CGFloat = CKDefaults.bevelWidth
+        CKDefaults.drawInsetBevel(with: rect)
+    }
+}
+
+extension CKContentWrapperView: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if !verticalScrollBar.isScrolling {
+            verticalScrollBar.value = scrollView.contentOffset.y
+        }
+        if !horizontalScrollBar.isScrolling {
+            horizontalScrollBar.value = scrollView.contentOffset.x
+        }
         
-        innerBottom.lineWidth = lineWidth
-        innerBottom.move(to: CGPoint(x: 0, y: bounds.height - lineWidth/2))
-        innerBottom.addLine(to: CGPoint(x: bounds.width - lineWidth/2, y: bounds.height - lineWidth/2))
-        innerBottom.addLine(to: CGPoint(x: bounds.width - lineWidth/2, y: 0))
-        UIColor.white.set()
-        innerBottom.stroke()
+        let contentHeight = scrollView.contentSize.height
+        let frameHeight = scrollView.frame.height
+        verticalScrollBar.range = contentHeight - frameHeight
+        verticalScrollBar.thumbSize = (frameHeight / contentHeight) * verticalScrollBar.scrollSize
         
-        outerBottom.lineWidth = lineWidth
-        outerBottom.move(to: CGPoint(x: lineWidth, y: bounds.height - lineWidth * 1.5))
-        outerBottom.addLine(to: CGPoint(x: bounds.width - lineWidth * 1.5, y: bounds.height - lineWidth * 1.5))
-        outerBottom.addLine(to: CGPoint(x: bounds.width - lineWidth * 1.5, y: lineWidth))
-        UIColor(white: 1, alpha: 0.5).set()
-        outerBottom.stroke()
-        
-        outerTop.lineWidth = lineWidth
-        outerTop.move(to: CGPoint(x: lineWidth/2, y: bounds.height - lineWidth))
-        outerTop.addLine(to: CGPoint(x: lineWidth/2, y: lineWidth/2))
-        outerTop.addLine(to: CGPoint(x: bounds.width - lineWidth, y: lineWidth/2))
-        UIColor(white: 0, alpha: 0.3).set()
-        outerTop.stroke()
-        
-        innerTop.lineWidth = lineWidth
-        innerTop.move(to: CGPoint(x: lineWidth * 1.5, y: bounds.height - lineWidth * 2))
-        innerTop.addLine(to: CGPoint(x: lineWidth * 1.5, y: lineWidth * 1.5))
-        innerTop.addLine(to: CGPoint(x: bounds.width - lineWidth * 2, y: lineWidth * 1.5))
-        UIColor.black.set()
-        innerTop.stroke()
-        
-        var contentFrame = CGRect()
-        contentFrame.origin.x = lineWidth * 2
-        contentFrame.origin.y = lineWidth * 2
-        contentFrame.size.height = rect.size.height - lineWidth * 4
-        contentFrame.size.width = rect.size.width - lineWidth * 4
-        
-        contentView.frame = contentFrame
+        let contentWidth = scrollView.contentSize.width
+        let frameWidth = scrollView.frame.width
+        horizontalScrollBar.range = contentWidth - frameWidth
+        horizontalScrollBar.thumbSize = (frameWidth / contentWidth) * horizontalScrollBar.scrollSize
     }
 }

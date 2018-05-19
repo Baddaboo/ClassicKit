@@ -82,36 +82,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ft7-Sb-8f9" customClass="CKContentWrapperView" customModule="Browser" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="105" width="320" height="349"/>
                                 <color key="backgroundColor" name="magnesium"/>
-                            </view>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GNP-IE-4F0">
-                                <rect key="frame" x="2" y="107" width="296" height="325"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FLQ-uF-4fM" customClass="CKVerticalScrollBar" customModule="Browser" customModuleProvider="target">
-                                <rect key="frame" x="298" y="107" width="20" height="325"/>
-                                <color key="backgroundColor" name="silver"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="XEo-Um-mDU"/>
-                                </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                    <userDefinedRuntimeAttribute type="color" keyPath="barColor">
                                         <color key="value" name="magnesium"/>
                                     </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eC1-63-cAi" customClass="CKHorizontalScrollBar" customModule="Browser" customModuleProvider="target">
-                                <rect key="frame" x="2" y="432" width="296" height="20"/>
-                                <color key="backgroundColor" name="silver"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="3BH-Qc-fFU"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
-                                        <color key="value" name="magnesium"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="scrollBarWidth">
+                                        <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -220,24 +196,17 @@
                         <constraints>
                             <constraint firstItem="lhZ-fd-Op4" firstAttribute="leading" secondItem="SXW-Ng-aAe" secondAttribute="trailing" id="0iN-zc-Bg6"/>
                             <constraint firstItem="kkq-R6-aOP" firstAttribute="centerY" secondItem="5PN-Fi-4Kc" secondAttribute="centerY" id="164-uD-YSj"/>
-                            <constraint firstItem="FLQ-uF-4fM" firstAttribute="leading" secondItem="GNP-IE-4F0" secondAttribute="trailing" id="1M8-js-xtm"/>
                             <constraint firstItem="5PN-Fi-4Kc" firstAttribute="top" secondItem="SXW-Ng-aAe" secondAttribute="bottom" constant="8" id="1W5-A8-A7b"/>
                             <constraint firstItem="5PN-Fi-4Kc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="2Uy-rj-NNF"/>
-                            <constraint firstItem="eC1-63-cAi" firstAttribute="top" secondItem="FLQ-uF-4fM" secondAttribute="bottom" id="3S6-gd-BLw"/>
-                            <constraint firstItem="GNP-IE-4F0" firstAttribute="top" secondItem="Ft7-Sb-8f9" secondAttribute="top" constant="2" id="4Xj-PO-Pe4"/>
                             <constraint firstItem="Cya-pm-Fb2" firstAttribute="top" secondItem="WXG-tN-Smm" secondAttribute="top" id="5By-cd-uAm"/>
                             <constraint firstItem="Zuu-Ae-ryU" firstAttribute="height" secondItem="umj-OO-qqj" secondAttribute="height" id="7iU-l1-66R"/>
                             <constraint firstItem="umj-OO-qqj" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-1" id="8Ld-se-wbA"/>
-                            <constraint firstItem="umj-OO-qqj" firstAttribute="top" secondItem="eC1-63-cAi" secondAttribute="bottom" constant="2" id="CKo-fr-eyL"/>
-                            <constraint firstItem="eC1-63-cAi" firstAttribute="top" secondItem="GNP-IE-4F0" secondAttribute="bottom" id="Cp4-Sf-HCa"/>
-                            <constraint firstItem="FLQ-uF-4fM" firstAttribute="leading" secondItem="eC1-63-cAi" secondAttribute="trailing" id="FUr-yT-Ti7"/>
+                            <constraint firstItem="Ft7-Sb-8f9" firstAttribute="top" secondItem="5PN-Fi-4Kc" secondAttribute="bottom" constant="2" id="ACE-pn-aZp"/>
                             <constraint firstItem="Zuu-Ae-ryU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="FjA-5H-ciI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ft7-Sb-8f9" secondAttribute="trailing" id="JVp-AH-3PQ"/>
                             <constraint firstItem="LlW-WY-Kc6" firstAttribute="leading" secondItem="ivj-rD-40x" secondAttribute="trailing" id="Lyh-Za-dJm"/>
                             <constraint firstItem="ivj-rD-40x" firstAttribute="height" secondItem="lhZ-fd-Op4" secondAttribute="height" id="N0l-Mv-LuT"/>
-                            <constraint firstItem="FLQ-uF-4fM" firstAttribute="top" secondItem="Ft7-Sb-8f9" secondAttribute="top" constant="2" id="OWK-N9-Qdf"/>
                             <constraint firstItem="lhZ-fd-Op4" firstAttribute="height" secondItem="SXW-Ng-aAe" secondAttribute="height" id="OYF-bx-Ejy"/>
-                            <constraint firstItem="GNP-IE-4F0" firstAttribute="leading" secondItem="Ft7-Sb-8f9" secondAttribute="leading" constant="2" id="Oke-es-M43"/>
                             <constraint firstItem="ivj-rD-40x" firstAttribute="centerY" secondItem="lhZ-fd-Op4" secondAttribute="centerY" id="QWQ-sB-Njm"/>
                             <constraint firstItem="WXG-tN-Smm" firstAttribute="centerY" secondItem="ivj-rD-40x" secondAttribute="centerY" id="RRZ-sJ-KfX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cya-pm-Fb2" secondAttribute="trailing" constant="3" id="RY9-sy-RTg"/>
@@ -246,9 +215,6 @@
                             <constraint firstItem="CMA-tW-ZrX" firstAttribute="leading" secondItem="WXG-tN-Smm" secondAttribute="trailing" id="ciC-W0-cQB"/>
                             <constraint firstItem="umj-OO-qqj" firstAttribute="top" secondItem="Ft7-Sb-8f9" secondAttribute="bottom" id="dEp-8k-Bq7"/>
                             <constraint firstItem="Zuu-Ae-ryU" firstAttribute="top" secondItem="umj-OO-qqj" secondAttribute="top" id="dW5-BZ-xdM"/>
-                            <constraint firstItem="eC1-63-cAi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="2" id="eeX-0m-H48"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FLQ-uF-4fM" secondAttribute="trailing" constant="2" id="fS3-y1-0d9"/>
-                            <constraint firstItem="GNP-IE-4F0" firstAttribute="top" secondItem="5PN-Fi-4Kc" secondAttribute="bottom" constant="4" id="fV5-Vy-S62"/>
                             <constraint firstItem="umj-OO-qqj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fXb-4k-cd4"/>
                             <constraint firstItem="LlW-WY-Kc6" firstAttribute="height" secondItem="ivj-rD-40x" secondAttribute="height" id="fsw-Dh-uUW"/>
                             <constraint firstItem="ivj-rD-40x" firstAttribute="leading" secondItem="CMA-tW-ZrX" secondAttribute="trailing" constant="8" id="g9t-3k-Agc"/>
@@ -273,14 +239,12 @@
                         <outlet property="goButton" destination="kkq-R6-aOP" id="1oh-QA-MlG"/>
                         <outlet property="helpButton" destination="LlW-WY-Kc6" id="vlO-br-gYj"/>
                         <outlet property="homeButton" destination="ivj-rD-40x" id="0Cm-bD-ndL"/>
-                        <outlet property="horizontalScrollBar" destination="eC1-63-cAi" id="BFk-Ao-YRN"/>
                         <outlet property="imageView" destination="Cya-pm-Fb2" id="ES3-Cw-C3i"/>
                         <outlet property="progressView" destination="Zuu-Ae-ryU" id="MtD-Jr-mou"/>
                         <outlet property="refreshButton" destination="CMA-tW-ZrX" id="uI3-Y0-MO0"/>
                         <outlet property="statusBar" destination="umj-OO-qqj" id="fGf-1c-wyG"/>
                         <outlet property="stopButton" destination="WXG-tN-Smm" id="gbC-YF-3Du"/>
-                        <outlet property="verticalScrollBar" destination="FLQ-uF-4fM" id="A1U-CN-lDm"/>
-                        <outlet property="webView" destination="GNP-IE-4F0" id="F8h-ct-Y0n"/>
+                        <outlet property="wrapperView" destination="Ft7-Sb-8f9" id="FbL-vn-QtF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -344,9 +308,6 @@
         <image name="stop" width="7" height="7"/>
         <namedColor name="magnesium">
             <color red="0.75300002099999996" green="0.75300002099999996" blue="0.75300002099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="silver">
-            <color red="0.875" green="0.875" blue="0.87800002098083496" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
