@@ -8,16 +8,12 @@
 
 import UIKit
 
-@IBDesignable
-class CKImageButton: CKButton {
-
-    @IBInspectable
-    var image: UIImage? {
+@IBDesignable class CKImageButton: CKButton {
+    @IBInspectable var image: UIImage? {
         didSet { imageView.image = image }
     }
     
-    @IBInspectable
-    var imageInset: CGFloat = 0
+    @IBInspectable var imageInset: CGFloat = 0
     
     let imageView = UIImageView()
     

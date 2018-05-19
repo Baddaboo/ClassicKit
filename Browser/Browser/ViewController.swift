@@ -60,8 +60,8 @@ class ViewController: UIViewController {
         refreshButton.addTarget(self, action: #selector(ViewController.refreshButtonTapped), for: .touchUpInside)
         helpButton.addTarget(self, action: #selector(ViewController.helpButtonTapped), for: .touchUpInside)
         
-        addressBar.textfield.returnKeyType = .go
-        addressBar.textfield.addTarget(self, action: #selector(ViewController.goButtonTapped), for: .primaryActionTriggered)
+        addressBar.returnKeyType = .go
+        addressBar.addTarget(self, action: #selector(ViewController.goButtonTapped), for: .primaryActionTriggered)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -98,7 +98,7 @@ class ViewController: UIViewController {
     }
     
     @objc func homeButtonTapped() {
-        addressBar.textfield.text = "https://google.com/"
+        addressBar.text = "https://google.com/"
         goButtonTapped()
     }
     

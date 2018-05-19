@@ -8,25 +8,26 @@
 
 import UIKit
 
-@IBDesignable
-class CKTextField: UIView {
-    @IBInspectable
-    var textSize: CGFloat = 30 {
+@IBDesignable class CKTextField: UIView {
+    @IBInspectable var textSize: CGFloat = 30 {
         didSet { textfield.font = UIFont(name: CKDefaults.fontName, size: textSize) }
     }
     
-    @IBInspectable
-    var placeholderText: String = "" {
+    @IBInspectable var placeholderText: String = "" {
         didSet { textfield.placeholder = placeholderText }
     }
     
-    @IBInspectable
-    var text: String? {
+    @IBInspectable var text: String? {
         get { return textfield.text }
         set { textfield.text = newValue }
     }
     
-    class _TextField: UITextField {
+    var returnKeyType: UIReturnKeyType {
+        get { return textfield.returnKeyType }
+        set { textfield.returnKeyType = newValue }
+    }
+    
+    private class _TextField: UITextField {
         override func editingRect(forBounds bounds: CGRect) -> CGRect {
             var frame = bounds
             frame.origin.x = 5
@@ -42,7 +43,7 @@ class CKTextField: UIView {
         }
     }
     
-    let textfield = _TextField()
+    private let textfield = _TextField()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -64,6 +65,10 @@ class CKTextField: UIView {
         
         textfield.backgroundColor = .white
         addSubview(textfield)
+    }
+    
+    func addTarget(_ target: Any?, action: Selector, for controlEvents: UIControlEvents) {
+        textfield.addTarget(target, action: action, for: controlEvents)
     }
     
     func hideKeyboard() {

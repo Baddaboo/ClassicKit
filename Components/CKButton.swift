@@ -8,10 +8,8 @@
 
 import UIKit
 
-@IBDesignable
-class CKButton: UIControl {
-    @IBInspectable
-    var buttonColor: UIColor? {
+@IBDesignable class CKButton: UIControl {
+    @IBInspectable var buttonColor: UIColor? {
         didSet { contentView.backgroundColor = buttonColor }
     }
     

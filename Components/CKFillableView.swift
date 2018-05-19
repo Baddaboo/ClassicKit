@@ -8,8 +8,7 @@
 
 import UIKit
 
-@IBDesignable
-class CKFillableView: UIView {
+@IBDesignable class CKFillableView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         setNeedsDisplay()

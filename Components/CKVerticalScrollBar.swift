@@ -8,10 +8,8 @@
 
 import UIKit
 
-@IBDesignable
-class CKVerticalScrollBar: UIControl {
-    @IBInspectable
-    var buttonColor: UIColor? {
+@IBDesignable class CKVerticalScrollBar: UIControl {
+    @IBInspectable var buttonColor: UIColor? {
         didSet {
             upButton.buttonColor = buttonColor
             downButton.buttonColor = buttonColor
@@ -19,8 +17,7 @@ class CKVerticalScrollBar: UIControl {
         }
     }
     
-    @IBInspectable
-    var value: CGFloat = 0 {
+    @IBInspectable var value: CGFloat = 0 {
         didSet {
             if value > range { value = range }
             else if value < 0 { value = 0 }
@@ -33,16 +30,14 @@ class CKVerticalScrollBar: UIControl {
         }
     }
     
-    @IBInspectable
-    var range: CGFloat = 100 {
+    @IBInspectable var range: CGFloat = 100 {
         didSet {
             if range <= 0 { range = 1 }
             else if range != oldValue { setNeedsLayout() }
         }
     }
     
-    @IBInspectable
-    var thumbSize: CGFloat = 100 {
+    @IBInspectable var thumbSize: CGFloat = 100 {
         didSet {
             if thumbSize < frame.size.width { thumbSize = frame.size.width }
             else if thumbSize != oldValue { setNeedsLayout() }
@@ -52,9 +47,9 @@ class CKVerticalScrollBar: UIControl {
     var isScrolling = false
     var scrollSize: CGFloat { return frame.size.height - 2 * frame.size.width }
     
-    let upButton = CKImageButton()
-    let downButton = CKImageButton()
-    let slider = CKView()
+    private let upButton = CKImageButton()
+    private let downButton = CKImageButton()
+    private let slider = CKView()
     
     private var basePoint = CGPoint()
     private var baseValue: CGFloat = 0

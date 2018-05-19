@@ -8,8 +8,7 @@
 
 import UIKit
 
-@IBDesignable
-class CKDialogViewController: UIViewController {
+@IBDesignable class CKDialogViewController: UIViewController {
     var contentView: UIView = UIView() {
         didSet {
             oldValue.removeFromSuperview()

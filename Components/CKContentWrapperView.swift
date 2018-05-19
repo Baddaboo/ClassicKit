@@ -9,38 +9,38 @@
 import UIKit
 import WebKit
 
-@IBDesignable
-class CKContentWrapperView: UIView {
-    @IBInspectable
-    var scrollBarWidth: CGFloat = 20 {
+@IBDesignable class CKContentWrapperView: UIView {
+    @IBInspectable var scrollBarWidth: CGFloat = 20 {
         didSet { setNeedsLayout() }
     }
     
-    @IBInspectable
-    var barColor: UIColor? = CKDefaults.backgroundColor {
+    @IBInspectable var barColor: UIColor? = CKDefaults.backgroundColor {
         didSet {
             verticalScrollBar.buttonColor = barColor
             horizontalScrollBar.buttonColor = barColor
         }
     }
     
-    var verticalScrollBar = CKVerticalScrollBar()
-    var horizontalScrollBar = CKHorizontalScrollBar()
-    var contentView: UIView = UIView() {
+    @IBOutlet weak var contentView: UIView? {
         didSet {
-            oldValue.removeFromSuperview()
-            addSubview(contentView)
-            
-            contentView.clipsToBounds = true
-            
-            if let contentView = contentView as? UIScrollView { scrollView = contentView }
-            else if let contentView = contentView as? WKWebView { scrollView = contentView.scrollView }
-            else { scrollView = nil }
-            
+            if let oldValue = oldValue {
+                oldValue.removeFromSuperview()
+            }
+            if let contentView = contentView {
+                addSubview(contentView)
+                
+                contentView.clipsToBounds = true
+                
+                if let contentView = contentView as? UIScrollView { scrollView = contentView }
+                else if let contentView = contentView as? WKWebView { scrollView = contentView.scrollView }
+                else { scrollView = nil }
+            }
             setNeedsDisplay()
         }
     }
     
+    private var verticalScrollBar = CKVerticalScrollBar()
+    private var horizontalScrollBar = CKHorizontalScrollBar()
     private var scrollView: UIScrollView? {
         didSet {
             if let scrollView = scrollView {
@@ -80,8 +80,9 @@ class CKContentWrapperView: UIView {
         verticalScrollBar.buttonColor = barColor
         horizontalScrollBar.buttonColor = barColor
         
-        
-        addSubview(contentView)
+        if let contentView = contentView {
+            addSubview(contentView)
+        }
         addSubview(verticalScrollBar)
         addSubview(horizontalScrollBar)
         
@@ -119,27 +120,29 @@ class CKContentWrapperView: UIView {
         super.layoutSubviews()
         let lineWidth = CKDefaults.bevelWidth
         
+        if let contentView = contentView {
         var contentFrame = CGRect()
-        contentFrame.origin.x = lineWidth * 2
-        contentFrame.origin.y = lineWidth * 2
-        contentFrame.size.height = frame.size.height - lineWidth * 4 - scrollBarWidth
-        contentFrame.size.width = frame.size.width - lineWidth * 4 - scrollBarWidth
-        
-        contentView.frame = contentFrame
+            contentFrame.origin.x = lineWidth * 2
+            contentFrame.origin.y = lineWidth * 2
+            contentFrame.size.height = frame.size.height - lineWidth * 4 - scrollBarWidth
+            contentFrame.size.width = frame.size.width - lineWidth * 4 - scrollBarWidth
+            
+            contentView.frame = contentFrame
+        }
         
         var verticalScrollFrame = CGRect()
-        verticalScrollFrame.origin.x = contentFrame.origin.x + contentFrame.size.width
-        verticalScrollFrame.origin.y = contentFrame.origin.y
-        verticalScrollFrame.size.height = contentFrame.size.height
+        verticalScrollFrame.origin.x = frame.size.width - lineWidth * 2 - scrollBarWidth
+        verticalScrollFrame.origin.y = lineWidth * 2
+        verticalScrollFrame.size.height = frame.size.height - lineWidth * 4 - scrollBarWidth
         verticalScrollFrame.size.width = scrollBarWidth
         
         verticalScrollBar.frame = verticalScrollFrame
         
         var horizontalScrollFrame = CGRect()
-        horizontalScrollFrame.origin.x = contentFrame.origin.x
-        horizontalScrollFrame.origin.y = contentFrame.origin.y + contentFrame.size.height
+        horizontalScrollFrame.origin.x = lineWidth * 2
+        horizontalScrollFrame.origin.y = frame.size.height - lineWidth * 2 - scrollBarWidth
         horizontalScrollFrame.size.height = scrollBarWidth
-        horizontalScrollFrame.size.width = contentFrame.size.width
+        horizontalScrollFrame.size.width = frame.size.width - lineWidth * 4 - scrollBarWidth
         
         horizontalScrollBar.frame = horizontalScrollFrame
         

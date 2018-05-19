@@ -9,16 +9,8 @@
 import UIKit
 import YYImage
 
-@IBDesignable
-class CKImageView: UIView {
-    
-    var image: UIImage? {
-        get { return imageView.image }
-        set { imageView.image = newValue }
-    }
-    
-    @IBInspectable
-    var shouldAnimate: Bool {
+@IBDesignable class CKImageView: UIView {
+    @IBInspectable var shouldAnimate: Bool {
         get { return imageView.isAnimating }
         set {
             if newValue { imageView.startAnimating() }
@@ -27,6 +19,11 @@ class CKImageView: UIView {
                 imageView.currentAnimatedImageIndex = 0
             }
         }
+    }
+    
+    @IBInspectable var image: UIImage? {
+        get { return imageView.image }
+        set { imageView.image = newValue }
     }
     
     private let imageView = YYAnimatedImageView()

@@ -8,18 +8,14 @@
 
 import UIKit
 
-@IBDesignable
-class CKLabel: UILabel {
-    
-    @IBInspectable
-    var textSize: CGFloat = 30 {
+@IBDesignable class CKLabel: UILabel {
+    @IBInspectable var textSize: CGFloat = 30 {
         didSet {
             font = UIFont(name: CKDefaults.fontName, size: textSize)
         }
     }
     
-    @IBInspectable
-    var leftInset: CGFloat = 0 {
+    @IBInspectable var leftInset: CGFloat = 0 {
         didSet { setNeedsDisplay() }
     }
     

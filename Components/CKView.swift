@@ -8,8 +8,7 @@
 
 import UIKit
 
-@IBDesignable
-class CKView: UIView {
+@IBDesignable class CKView: UIView {
     enum Style {
         case window, control
     }

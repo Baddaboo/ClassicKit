@@ -8,31 +8,26 @@
 
 import UIKit
 
-@IBDesignable
-class CKProgressView: UIControl {
-    @IBInspectable
-    var value: CGFloat = 50 {
+@IBDesignable class CKProgressView: UIControl {
+    @IBInspectable var value: CGFloat = 50 {
         didSet {
             if value != oldValue { setNeedsDisplay() }
         }
     }
     
-    @IBInspectable
-    var range: CGFloat = 100 {
+    @IBInspectable var range: CGFloat = 100 {
         didSet {
             if range != oldValue { setNeedsDisplay() }
         }
     }
     
-    @IBInspectable
-    var spacing: CGFloat = 4 {
+    @IBInspectable var spacing: CGFloat = 4 {
         didSet {
             if spacing != oldValue { setNeedsDisplay() }
         }
     }
     
-    @IBInspectable
-    var progressColor: UIColor = CKDefaults.highlightColor ?? UIColor.black {
+    @IBInspectable var progressColor: UIColor = CKDefaults.highlightColor ?? UIColor.black {
         didSet {
             if progressColor != oldValue { setNeedsDisplay() }
         }

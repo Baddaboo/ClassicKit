@@ -8,19 +8,14 @@
 
 import UIKit
 
-
-@IBDesignable
-class CKStatusView: UIView {
-
-    @IBInspectable
-    var message: String = "" {
+@IBDesignable class CKStatusView: UIView {
+    @IBInspectable var message: String = "" {
         didSet {
             label.text = message
         }
     }
     
-    @IBInspectable
-    var textSize: CGFloat = 16 {
+    @IBInspectable var textSize: CGFloat = 16 {
         didSet {
             label.font = UIFont(name: CKDefaults.fontName, size: textSize)
         }

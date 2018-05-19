@@ -8,9 +8,7 @@
 
 import UIKit
 
-@IBDesignable
-class CKNavigationBar: UIView {
-
+@IBDesignable class CKNavigationBar: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         setNeedsDisplay()

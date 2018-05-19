@@ -8,22 +8,20 @@
 
 import UIKit
 
-@IBDesignable
-class CKTextButton: CKButton {
-    @IBInspectable
-    var textColor: UIColor = .black {
+@IBDesignable class CKTextButton: CKButton {
+    @IBInspectable var textColor: UIColor = .black {
         didSet { label.textColor = textColor }
     }
-    @IBInspectable
-    var text: String = "" {
+    
+    @IBInspectable var text: String = "" {
         didSet { label.text = text }
     }
-    @IBInspectable
-    var textSize: CGFloat = 30 {
+    
+    @IBInspectable var textSize: CGFloat = 30 {
         didSet { label.font = UIFont(name: CKDefaults.fontName, size: textSize) }
     }
     
-    let label = UILabel()
+    private let label = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)

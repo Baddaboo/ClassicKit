@@ -8,10 +8,8 @@
 
 import UIKit
 
-@IBDesignable
-class CKHorizontalScrollBar: UIControl {
-    @IBInspectable
-    var buttonColor: UIColor? {
+@IBDesignable class CKHorizontalScrollBar: UIControl {
+    @IBInspectable var buttonColor: UIColor? {
         didSet {
             leftButton.buttonColor = buttonColor
             rightButton.buttonColor = buttonColor
@@ -19,8 +17,7 @@ class CKHorizontalScrollBar: UIControl {
         }
     }
     
-    @IBInspectable
-    var value: CGFloat = 0 {
+    @IBInspectable var value: CGFloat = 0 {
         didSet {
             if value > range { value = range }
             else if value < 0 { value = 0 }
@@ -33,16 +30,14 @@ class CKHorizontalScrollBar: UIControl {
         }
     }
     
-    @IBInspectable
-    var range: CGFloat = 100 {
+    @IBInspectable var range: CGFloat = 100 {
         didSet {
             if range <= 0 { range = 1 }
             else if range != oldValue { setNeedsLayout() }
         }
     }
     
-    @IBInspectable
-    var thumbSize: CGFloat = 100 {
+    @IBInspectable var thumbSize: CGFloat = 100 {
         didSet {
             if thumbSize < frame.size.height { thumbSize = frame.size.height }
             else if thumbSize != oldValue { setNeedsLayout() }
