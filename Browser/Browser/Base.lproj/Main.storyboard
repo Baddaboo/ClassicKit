@@ -89,6 +89,8 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="scrollBarWidth">
                                         <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showVerticalScrollBarAlways" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showHorizontalScrollBarAlways" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WXG-tN-Smm" customClass="CKImageButton" customModule="Browser" customModuleProvider="target">

@@ -13,7 +13,6 @@ import WebKit
 import YYImage
 
 class ViewController: UIViewController {
-    
     @IBOutlet weak var backButton: CKImageButton!
     @IBOutlet weak var forwardButton: CKImageButton!
     @IBOutlet weak var homeButton: CKImageButton!
@@ -27,8 +26,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageView: CKImageView!
     @IBOutlet weak var wrapperView: CKContentWrapperView!
     
-    var webView: WKWebView = WKWebView()
-    var player: AVPlayer!
+    private var webView: WKWebView = WKWebView()
+    private var player: AVPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,17 +68,6 @@ class ViewController: UIViewController {
         imageView.shouldAnimate = false
     }
     
-    @objc func refreshButtonTapped() {
-        webView.reload()
-    }
-    
-    @objc func helpButtonTapped() {
-        let viewController = CKDialogViewController()
-        viewController.modalPresentationStyle = .overCurrentContext
-        viewController.contentView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "aboutView").view
-        present(viewController, animated: false, completion: nil)
-    }
-    
     @objc func goButtonTapped() {
         if let text = addressBar.text,
             let url = URL(string: text) {
@@ -89,21 +77,22 @@ class ViewController: UIViewController {
         addressBar.hideKeyboard()
     }
     
-    @objc func backButtonTapped() {
-        webView.goBack()
-    }
+    @objc func backButtonTapped() { webView.goBack() }
+    @objc func forwardButtonTapped() { webView.goForward() }
     
-    @objc func forwardButtonTapped() {
-        webView.goForward()
-    }
+    @objc func stopButtonTapped() { webView.stopLoading() }
+    @objc func refreshButtonTapped() { webView.reload() }
     
     @objc func homeButtonTapped() {
         addressBar.text = "https://google.com/"
         goButtonTapped()
     }
     
-    @objc func stopButtonTapped() {
-        webView.stopLoading()
+    @objc func helpButtonTapped() {
+        let viewController = CKDialogViewController()
+        viewController.modalPresentationStyle = .overCurrentContext
+        viewController.contentView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "aboutView").view
+        present(viewController, animated: false, completion: nil)
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {

@@ -21,6 +21,9 @@ import WebKit
         }
     }
     
+    @IBInspectable var showVerticalScrollBarAlways: Bool = true
+    @IBInspectable var showHorizontalScrollBarAlways: Bool = true
+    
     @IBOutlet weak var contentView: UIView? {
         didSet {
             if let oldValue = oldValue {
@@ -56,6 +59,16 @@ import WebKit
             }
         }
     }
+    private var isVerticalScrollBarGrayed: Bool = false {
+        didSet {
+            if isVerticalScrollBarGrayed != oldValue { setNeedsLayout() }
+        }
+    }
+    private var isHorizontalScrollBarGrayed: Bool = false {
+        didSet {
+            if isHorizontalScrollBarGrayed != oldValue { setNeedsLayout() }
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -70,7 +83,11 @@ import WebKit
     }
     
     private func configure() {
-        backgroundColor = .clear
+        if let contentView = contentView {
+            addSubview(contentView)
+        }
+        addSubview(verticalScrollBar)
+        addSubview(horizontalScrollBar)
         
         verticalScrollBar.range = 1
         verticalScrollBar.value = 1
@@ -79,12 +96,6 @@ import WebKit
         
         verticalScrollBar.buttonColor = barColor
         horizontalScrollBar.buttonColor = barColor
-        
-        if let contentView = contentView {
-            addSubview(contentView)
-        }
-        addSubview(verticalScrollBar)
-        addSubview(horizontalScrollBar)
         
         verticalScrollBar.addTarget(self, action: #selector(CKContentWrapperView.verticalSliderDidMove), for: .valueChanged)
         horizontalScrollBar.addTarget(self, action: #selector(CKContentWrapperView.horizontalSliderDidMove), for: .valueChanged)
@@ -119,13 +130,15 @@ import WebKit
     override func layoutSubviews() {
         super.layoutSubviews()
         let lineWidth = CKDefaults.bevelWidth
+        let showVerticalScrollBar = showVerticalScrollBarAlways || !isVerticalScrollBarGrayed
+        let showHorizontalScrollBar = showHorizontalScrollBarAlways || !isHorizontalScrollBarGrayed
         
         if let contentView = contentView {
         var contentFrame = CGRect()
             contentFrame.origin.x = lineWidth * 2
             contentFrame.origin.y = lineWidth * 2
-            contentFrame.size.height = frame.size.height - lineWidth * 4 - scrollBarWidth
-            contentFrame.size.width = frame.size.width - lineWidth * 4 - scrollBarWidth
+            contentFrame.size.height = frame.size.height - lineWidth * 4 - (showHorizontalScrollBar ? scrollBarWidth : 0)
+            contentFrame.size.width = frame.size.width - lineWidth * 4 - (showVerticalScrollBar ? scrollBarWidth : 0)
             
             contentView.frame = contentFrame
         }
@@ -133,18 +146,20 @@ import WebKit
         var verticalScrollFrame = CGRect()
         verticalScrollFrame.origin.x = frame.size.width - lineWidth * 2 - scrollBarWidth
         verticalScrollFrame.origin.y = lineWidth * 2
-        verticalScrollFrame.size.height = frame.size.height - lineWidth * 4 - scrollBarWidth
+        verticalScrollFrame.size.height = frame.size.height - lineWidth * 4 - (showHorizontalScrollBar ? scrollBarWidth : 0)
         verticalScrollFrame.size.width = scrollBarWidth
         
         verticalScrollBar.frame = verticalScrollFrame
+        verticalScrollBar.isHidden = !showVerticalScrollBar
         
         var horizontalScrollFrame = CGRect()
         horizontalScrollFrame.origin.x = lineWidth * 2
         horizontalScrollFrame.origin.y = frame.size.height - lineWidth * 2 - scrollBarWidth
         horizontalScrollFrame.size.height = scrollBarWidth
-        horizontalScrollFrame.size.width = frame.size.width - lineWidth * 4 - scrollBarWidth
+        horizontalScrollFrame.size.width = frame.size.width - lineWidth * 4 - (showVerticalScrollBar ? scrollBarWidth : 0)
         
         horizontalScrollBar.frame = horizontalScrollFrame
+        horizontalScrollBar.isHidden = !showHorizontalScrollBar
         
         setNeedsDisplay()
     }
@@ -174,5 +189,8 @@ extension CKContentWrapperView: UIScrollViewDelegate {
         let frameWidth = scrollView.frame.width
         horizontalScrollBar.range = contentWidth - frameWidth
         horizontalScrollBar.thumbSize = (frameWidth / contentWidth) * horizontalScrollBar.scrollSize
+        
+        isVerticalScrollBarGrayed = verticalScrollBar.isGrayedOut
+        isHorizontalScrollBarGrayed = horizontalScrollBar.isGrayedOut
     }
 }

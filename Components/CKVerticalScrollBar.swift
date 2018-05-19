@@ -46,6 +46,7 @@ import UIKit
     
     var isScrolling = false
     var scrollSize: CGFloat { return frame.size.height - 2 * frame.size.width }
+    var isGrayedOut: Bool { return state == .disabled || thumbSize >= scrollSize }
     
     private let upButton = CKImageButton()
     private let downButton = CKImageButton()
@@ -136,7 +137,7 @@ import UIKit
         thumbFrame.origin.x = 0
         slider.frame = thumbFrame
         
-        if state == .disabled || thumbSize >= scrollSize {
+        if isGrayedOut {
             isUserInteractionEnabled = false
             slider.isHidden = true
             upButton.isEnabled = false

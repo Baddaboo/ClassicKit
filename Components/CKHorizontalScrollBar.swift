@@ -46,6 +46,7 @@ import UIKit
     
     var isScrolling = false
     var scrollSize: CGFloat { return frame.size.width - 2 * frame.size.height }
+    var isGrayedOut: Bool { return state == .disabled || thumbSize >= scrollSize }
     
     let leftButton = CKImageButton()
     let rightButton = CKImageButton()
@@ -136,7 +137,7 @@ import UIKit
         thumbFrame.origin.x = (value / range) * (frame.size.width - 2 * frame.size.height - thumbFrame.size.width) + frame.size.height
         slider.frame = thumbFrame
         
-        if state == .disabled || thumbSize >= scrollSize {
+        if isGrayedOut {
             isUserInteractionEnabled = false
             slider.isHidden = true
             leftButton.isEnabled = false
