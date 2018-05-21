@@ -29,7 +29,7 @@ import UIKit
 
     var keyboardType: UIKeyboardType {
         get { return textfield.keyboardType }
-        set { textfield.keyboardType = keyboardType }
+        set { textfield.keyboardType = newValue }
     }
 
     var delegate: UITextFieldDelegate? {
