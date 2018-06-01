@@ -1,4 +1,5 @@
 Build/
+*.xcuserdatad
 *.DS_Store
 
 Spotify/

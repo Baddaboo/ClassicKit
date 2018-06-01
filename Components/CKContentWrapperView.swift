@@ -51,6 +51,8 @@ import WebKit
                 scrollView.showsHorizontalScrollIndicator = false
                 scrollView.addObserver(self, forKeyPath: #keyPath(UIScrollView.contentSize), options: .new, context: nil)
                 scrollView.delegate = self
+                
+                updateScrollBars()
             } else {
                 verticalScrollBar.range = 1
                 verticalScrollBar.value = 1
@@ -103,15 +105,7 @@ import WebKit
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if let object = object as? UIScrollView, object == scrollView && keyPath == "contentSize" {
-            let contentHeight = object.contentSize.height
-            let frameHeight = object.frame.height
-            verticalScrollBar.range = contentHeight - frameHeight
-            verticalScrollBar.thumbSize = (frameHeight / contentHeight) * verticalScrollBar.scrollSize
-            
-            let contentWidth = object.contentSize.width
-            let frameWidth = object.frame.width
-            horizontalScrollBar.range = contentWidth - frameWidth
-            horizontalScrollBar.thumbSize = (frameWidth / contentWidth) * horizontalScrollBar.scrollSize
+            updateScrollBars()
         }
     }
     
@@ -169,10 +163,10 @@ import WebKit
         
         CKDefaults.drawInsetBevel(with: rect)
     }
-}
-
-extension CKContentWrapperView: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    
+    func updateScrollBars() {
+        guard let scrollView = scrollView else { return }
+        
         if !verticalScrollBar.isScrolling {
             verticalScrollBar.value = scrollView.contentOffset.y
         }
@@ -180,17 +174,23 @@ extension CKContentWrapperView: UIScrollViewDelegate {
             horizontalScrollBar.value = scrollView.contentOffset.x
         }
         
-        let contentHeight = scrollView.contentSize.height
+        let contentHeight = max(1, scrollView.contentSize.height)
         let frameHeight = scrollView.frame.height
         verticalScrollBar.range = contentHeight - frameHeight
         verticalScrollBar.thumbSize = (frameHeight / contentHeight) * verticalScrollBar.scrollSize
         
-        let contentWidth = scrollView.contentSize.width
+        let contentWidth = max(scrollView.contentSize.width, 1)
         let frameWidth = scrollView.frame.width
         horizontalScrollBar.range = contentWidth - frameWidth
         horizontalScrollBar.thumbSize = (frameWidth / contentWidth) * horizontalScrollBar.scrollSize
         
         isVerticalScrollBarGrayed = verticalScrollBar.isGrayedOut
         isHorizontalScrollBarGrayed = horizontalScrollBar.isGrayedOut
+    }
+}
+
+extension CKContentWrapperView: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == self.scrollView { updateScrollBars() }
     }
 }

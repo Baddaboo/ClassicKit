@@ -26,6 +26,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SXW-Ng-aAe" customClass="CKImageButton" customModule="Browser" customModuleProvider="target">
                                 <rect key="frame" x="8" y="30" width="35" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="dOH-Az-wos"/>
                                     <constraint firstAttribute="width" secondItem="SXW-Ng-aAe" secondAttribute="height" multiplier="1:1" id="yaX-BT-EEW"/>
@@ -42,6 +43,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhZ-fd-Op4" customClass="CKImageButton" customModule="Browser" customModuleProvider="target">
                                 <rect key="frame" x="43" y="30" width="35" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="lhZ-fd-Op4" secondAttribute="height" multiplier="1:1" id="bLp-44-JHM"/>
                                 </constraints>

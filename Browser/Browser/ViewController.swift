@@ -125,7 +125,7 @@ class ViewController: UIViewController {
 
 extension ViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        statusBar.message = "Opening  page..."
+        statusBar.message = "Opening page..."
         progressView.isEnabled = true
         stopButton.isEnabled = true
         
