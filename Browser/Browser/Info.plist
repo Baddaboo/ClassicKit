@@ -33,6 +33,7 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>fixedsys.ttf</string>
 		<string>MS Sans Serif.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>

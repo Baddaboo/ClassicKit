@@ -13,7 +13,7 @@ class CKBlueScreenViewController: UIViewController {
     let textDelay: TimeInterval = 0.5
     let textIncrement: TimeInterval = 0.05
     
-    var textSize: CGFloat = 11
+    var textSize: CGFloat = 12
     var errorReason: String = ""
     
     override var prefersStatusBarHidden: Bool { return true }
@@ -29,17 +29,17 @@ class CKBlueScreenViewController: UIViewController {
         let gestureRecognzier = UITapGestureRecognizer(target: self, action: #selector(CKBlueScreenViewController.viewWasTapped))
         
         productLabel.text = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? "iOS"
-        productLabel.textSize = textSize
         productLabel.textColor = .blue
-        productLabel.backgroundColor = CKDefaults.textureLightColor
         productLabel.textAlignment = .center
+        productLabel.font = UIFont(name: CKDefaults.blueScreenFontName, size: textSize)
+        productLabel.backgroundColor = CKDefaults.textureLightColor
         
         endLabel.text = "Tap anywhere to continue _"
-        endLabel.textSize = textSize
         endLabel.textColor = .white
         endLabel.textAlignment = .center
+        endLabel.font = UIFont(name: CKDefaults.blueScreenFontName, size: textSize)
         
-        textView.font = UIFont(name: CKDefaults.fontName, size: textSize)
+        textView.font = UIFont(name: CKDefaults.blueScreenFontName, size: textSize)
         textView.textColor = .white
         textView.backgroundColor = .clear
         
@@ -55,7 +55,7 @@ class CKBlueScreenViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        textView.text = "A fatal exception has occured: \(errorReason).  The current application will be terminated.\n\n*    Tap anywhere to terminate the current application.\n*    You will lose any unsaved information in this application."
+        textView.text = "A fatal exception has occured: \(errorReason). The current application will be terminated.\n\n*  Tap anywhere to terminate the current application.\n*  You will lose any unsaved information in this application."
         
         setNeedsStatusBarAppearanceUpdate()
     }
@@ -81,11 +81,11 @@ class CKBlueScreenViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        textView.frame.size = CGSize(width: 280, height: 100)
+        textView.frame.size = CGSize(width: 280, height: 120)
         textView.center = view.center
         
         if let productText = productLabel.text {
-            productLabel.frame.size = productText.size(withAttributes: [NSAttributedStringKey.font: UIFont(name: CKDefaults.fontName, size: textSize) as Any])
+            productLabel.frame.size = productText.size(withAttributes: [NSAttributedStringKey.font: UIFont(name: CKDefaults.blueScreenFontName, size: textSize) as Any])
             productLabel.frame.size.width += productLabelHorizontalMargin
             productLabel.center = CGPoint(x: view.center.x, y: textView.frame.origin.y - productLabel.frame.size.height)
         }

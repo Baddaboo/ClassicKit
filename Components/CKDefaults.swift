@@ -15,6 +15,7 @@ class CKDefaults {
     static let highlightColor = UIColor(named: "midnight")
     static let textureLightColor = UIColor(named: "silver")
     static let fontName = "MS Sans Serif"
+    static let blueScreenFontName = "FixedsysTTF"
     
     class func drawInsetBevel(with bounds: CGRect) {
         let outerBottom = UIBezierPath()

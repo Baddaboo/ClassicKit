@@ -16,6 +16,7 @@
 		12028F7B20A69C4100DA9CC1 /* CKStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12028F7A20A69C4100DA9CC1 /* CKStatusView.swift */; };
 		12028F7D20A6A14D00DA9CC1 /* CKLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12028F7C20A6A14D00DA9CC1 /* CKLabel.swift */; };
 		12028F8020A6A6FE00DA9CC1 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12028F7F20A6A6FE00DA9CC1 /* WebKit.framework */; };
+		120D50FC20C1F7A60041BDC5 /* fixedsys.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 120D50FB20C1F7A30041BDC5 /* fixedsys.ttf */; };
 		122D898320ACD18300E66931 /* MS Sans Serif.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 122D898220ACD18300E66931 /* MS Sans Serif.ttf */; };
 		122D89E120AD758000E66931 /* CKBlueScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122D89E020AD758000E66931 /* CKBlueScreenViewController.swift */; };
 		126F7C4B20A573A800CD1C0F /* CKView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126F7C4A20A573A800CD1C0F /* CKView.swift */; };
@@ -62,6 +63,7 @@
 		12028F7A20A69C4100DA9CC1 /* CKStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKStatusView.swift; sourceTree = "<group>"; };
 		12028F7C20A6A14D00DA9CC1 /* CKLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKLabel.swift; sourceTree = "<group>"; };
 		12028F7F20A6A6FE00DA9CC1 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		120D50FB20C1F7A30041BDC5 /* fixedsys.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fixedsys.ttf; sourceTree = "<group>"; };
 		122D898220ACD18300E66931 /* MS Sans Serif.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MS Sans Serif.ttf"; sourceTree = "<group>"; };
 		122D89E020AD758000E66931 /* CKBlueScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKBlueScreenViewController.swift; sourceTree = "<group>"; };
 		12688B1A20AA4F8800A142D4 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				122D898220ACD18300E66931 /* MS Sans Serif.ttf */,
+				120D50FB20C1F7A30041BDC5 /* fixedsys.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				126F7C5720A573C500CD1C0F /* LaunchScreen.storyboard in Resources */,
 				12F00B6F20A9721D00927D15 /* Windows Navigation Start.wav in Resources */,
 				126F7C5E20A5746F00CD1C0F /* Assets.xcassets in Resources */,
+				120D50FC20C1F7A60041BDC5 /* fixedsys.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
