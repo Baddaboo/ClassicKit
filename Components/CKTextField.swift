@@ -26,6 +26,17 @@ import UIKit
         get { return textfield.returnKeyType }
         set { textfield.returnKeyType = newValue }
     }
+
+    var keyboardType: UIKeyboardType {
+        get { return textfield.keyboardType }
+        set { textfield.keyboardType = newValue }
+    }
+
+    var delegate: UITextFieldDelegate? {
+        didSet {
+            textfield.delegate = delegate
+        }
+    }
     
     private class _TextField: UITextField {
         override func editingRect(forBounds bounds: CGRect) -> CGRect {
