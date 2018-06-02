@@ -55,7 +55,7 @@ class CKBlueScreenViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        textView.text = "A fatal exception has occured: \(errorReason). The current application will be terminated.\n\n*  Tap anywhere to terminate the current application.\n*  You will lose any unsaved information in this application."
+        textView.text = "A fatal exception has occurred: \(errorReason). The current application will be terminated.\n\n*  Tap anywhere to terminate the current application.\n*  You will lose any unsaved information in this application."
         
         setNeedsStatusBarAppearanceUpdate()
     }
