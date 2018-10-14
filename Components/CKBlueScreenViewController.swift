@@ -85,7 +85,7 @@ class CKBlueScreenViewController: UIViewController {
         textView.center = view.center
         
         if let productText = productLabel.text {
-            productLabel.frame.size = productText.size(withAttributes: [NSAttributedStringKey.font: UIFont(name: CKDefaults.blueScreenFontName, size: textSize) as Any])
+            productLabel.frame.size = productText.size(withAttributes: [NSAttributedString.Key.font: UIFont(name: CKDefaults.blueScreenFontName, size: textSize) as Any])
             productLabel.frame.size.width += productLabelHorizontalMargin
             productLabel.center = CGPoint(x: view.center.x, y: textView.frame.origin.y - productLabel.frame.size.height)
         }

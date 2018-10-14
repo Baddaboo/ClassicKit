@@ -78,7 +78,7 @@ import UIKit
         addSubview(textfield)
     }
     
-    func addTarget(_ target: Any?, action: Selector, for controlEvents: UIControlEvents) {
+    func addTarget(_ target: Any?, action: Selector, for controlEvents: UIControl.Event) {
         textfield.addTarget(target, action: action, for: controlEvents)
     }
     
