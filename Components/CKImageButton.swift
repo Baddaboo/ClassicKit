@@ -33,7 +33,7 @@ import UIKit
         isOpaque = false
         
         imageView.contentMode = .scaleAspectFit
-        imageView.layer.magnificationFilter = kCAFilterNearest
+        imageView.layer.magnificationFilter = CALayerContentsFilter.nearest
         contentView.addSubview(imageView)
     }
     

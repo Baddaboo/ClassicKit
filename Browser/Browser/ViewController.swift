@@ -101,7 +101,7 @@ class ViewController: UIViewController {
         }
     }
     
-    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         super.motionEnded(motion, with: event)
         
         if motion == .motionShake {
@@ -113,7 +113,7 @@ class ViewController: UIViewController {
     
     func playNavigationSound() {
         do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setCategory(convertFromAVAudioSessionCategory(AVAudioSession.Category.playback))
             try AVAudioSession.sharedInstance().setActive(true)
             if let url = Bundle.main.url(forResource: "Windows Navigation Start", withExtension: "wav") {
                 player = AVPlayer(url: url)
@@ -144,4 +144,9 @@ extension ViewController: WKNavigationDelegate {
         addressBar.text = webView.url?.absoluteString
         imageView.shouldAnimate = false
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromAVAudioSessionCategory(_ input: AVAudioSession.Category) -> String {
+	return input.rawValue
 }
