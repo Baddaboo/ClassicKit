@@ -11,6 +11,16 @@ This is a little exploration into applying '90s-era design & principles into a m
 **Update:**
 - (3/17) Added a simple Blue Screen of Death! Simply shake the device vigorously.
 
+## Installation
+
+Add the following to your `Podfile`:
+
+```ruby
+pod 'ClassicKit', :git => 'https://github.com/Baddaboo/ClassicKit.git'
+```
+
+Note the Git repo must be specified because ClassicKit isn't published to the CocoaPods specs repo.
+
 ## Usage
 - The `Browser` example can be run out-of-the-box.
 - You _should_ be able to include some or all of the files under `/Components` in your project.
